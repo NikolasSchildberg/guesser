@@ -17,6 +17,13 @@ maxi = 1000
 guess = int((mini+maxi)/2)
 count_guesses = 1
 
+def key(event):
+    if repr(event.char) == 'a':
+        print("Ha!")
+frame = Frame(root, width=100, height=100)
+frame.bind("<Left>", lambda: lower_clicked)
+frame.bind("<Right>", lambda: higher_clicked)
+
 def higher_clicked():
     global mini, maxi, guess, count_guesses, usermessage
     mini = guess
